@@ -2,7 +2,7 @@
 
 ScrapeEmojis <- function(){
   
-  ## importing packages
+  # installing packages
   if("rvest" %in% installed.packages() != TRUE) {
     install.packages("rvest")
   }
@@ -12,6 +12,11 @@ ScrapeEmojis <- function(){
   if("XML" %in% installed.packages() != TRUE) {
     install.packages("XML")
   }
+  
+  # attaching packages
+  library(rvest)
+  library(pryr)
+  library(XML)
   
   # define standard Emoji pages
   pages <- c("https://emojipedia.org/people/",
