@@ -53,14 +53,12 @@ ScrapeEmojis <- function(){
     #### Parsing Data
     Emojis <- EmojiList[seq(1,length(EmojiList),3)]
     Emojis <- sapply(Emojis, `[[`, 1) 
-    length(Emojis)
     
     EmojiNames <- EmojiList[seq(2,length(EmojiList),3)]
     EmojiNames <- unlist(EmojiNames)
-    length(EmojiNames)
     
     # adding byte column
-    Bytes <- pryr::bytes(Emojis)
+    Bytes <- bytes(Emojis)
     
     DF <- data.frame(Emojis,EmojiNames,Bytes)
     return(DF)
